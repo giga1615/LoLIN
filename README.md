@@ -20,7 +20,7 @@
 | 팀원 | 🍜 박다윤 | Frontend & Backend |  [@nuyadkrap](https://github.com/nuyadkrap)  |
 |      | 🍎 신충현 | Backend            |  [@ybj0749](https://lab.ssafy.com/ybj0749)  |
 |      | 🍣 윤지선 | Frontend           | [@giga1615](https://github.com/giga1615) |
-|      | 🍗 이도건 | Data Analysis      |                                                           |
+|      | 🍗 이도건 | Data Analysis      |  [@Lee-DoGun](https://github.com/Lee-DoGun)  |
 
 <br/><br/>
 

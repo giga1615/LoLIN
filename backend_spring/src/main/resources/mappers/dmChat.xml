@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lolin.dao.DmDao">
+
+	<insert id ="sendDm">
+		insert into dm (my_id,your_id,my_nickname,your_nickname,message_data) values
+		(#{myId},#{yourId},#{myNickName},#{yourNickName},#{messageData})
+	</insert>
+	
+	<select id="readDmByNickName" resultType="com.lolin.model.DmMessageDto">
+        select * from dm where ((my_nickname=#{myNickName} and your_nickname=#{yourNickName}) or (my_nickname=#{yourNickName})) and not message_Data="새채팅" 
+    </select>
+
+	<select id="getDmList" resultType="String">
+    select distinct your_nickname from dm where my_id = #{myId} 
+    union
+    select distinct my_nickname from dm where your_id=#{myId}
+	</select>
+	
+</mapper>

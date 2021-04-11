@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lolin.dao.MemberDao">
+
+	<insert id="make">
+		 insert into member (id, nick_name, pw) values (#{id},#{nickName},#{pw} );
+		 insert into member_for_recommend (nickname) values (#{nickName});
+	</insert>
+	
+	<update id="update">
+		 update member set nick_name = #{nickName} where id = #{id} and pw= #{pw};
+		 update memberchatroomlist set nick_name = #{nickName} where id = #{id} and pw= #{pw}; 
+		 update chatroom set nick_name = #{nickName} where id = #{id};
+		 update dm set my_nickname = #{nickName} where my_id = #{id};
+		 update dm set your_nickname = #{nickName} where your_id = #{id};
+	</update>
+	
+	
+	<select id="getNickName" resultType="String">
+		select nick_name as nickName from member where id=#{id};
+	</select>
+	
+	<select id="getAllNickName" resultType="String">
+		select nick_name as nickName from member where not nick_name=#{myNickName}
+	</select>
+	
+	
+	<select id="findByEmail" resultType="com.lolin.model.UserSecurityDto">
+		select id as username, pw as password from member where id=#{id};
+	</select>
+	
+	
+	<select id="getID" resultType="String">
+		select id from member where nick_name = #{nickName};
+	</select>
+	
+	
+	<!-- insert into auth_pre (id, img_number) values  (#{nickName},#{iconNumber} ) -->
+	<insert id="authPre"> 
+		 INSERT INTO auth_pre (nick_name, img_number) VALUES (#{nickName},#{iconNumber}) ON DUPLICATE KEY UPDATE img_number=#{iconNumber}
+	</insert>
+	
+	
+	<select id="getAuthPreImg" resultType="Integer">
+		select img_number from auth_pre where nick_name=#{nickName};
+	</select>
+	
+	
+	<!-- 추가부분 -->
+	<delete id ="delete">
+		delete from member	where id=#{id}
+	</delete>
+	
+	<update id="pwUpdate">
+		update member set pw = #{pw} where id=#{id}
+	</update>
+	
+	<select id="getNickNameById" resultType="String">
+		select nick_name from member where id=#{id}
+	</select>
+	
+
+	<select id="get_api_key" resultType="String">
+		select api_key from api_key where admin=admin;
+	</select>
+	
+</mapper>

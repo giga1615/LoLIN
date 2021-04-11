@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lolin.dao.RecommendDao">
+	
+	
+	<select id="getRecommendedUser" resultType="com.lolin.model.RecommendedUserDto">
+		select distinct a.*, b.connection_check from member_for_recommend as a join connection as b where game_style like #{selectedGameStyle} and liked_position like #{selectedPosition}
+		and user_level>=#{level} and nickname not like #{nickName} and time_predict=#{time} and tier=#{tier}
+		and a.nickname = b.my_nickname
+		order by connection_check asc, win_rate desc, liked desc;
+		
+		update member_for_recommend set game_style = #{selectedGameStyle} where nickname like #{nickName};
+	</select>
+	
+	
+	
+	
+	<select id="getReadAllrecommend" resultType="com.lolin.model.RecommendedUserDto">
+		select distinct a.*, b.connection_check from member_for_recommend as a join connection as b where
+		nickname not like #{nickName} and a.nickname = b.my_nickname;
+	</select>
+	
+	
+	<select id="getMyInfo" resultType="com.lolin.model.RecommendedUserDto">
+		select distinct a.*, b.connection_check from member_for_recommend as a join connection as b on nickname like #{nickName} and a.nickname = b.my_nickname;
+		
+		 
+	</select>
+	
+	
+	<!-- id like #{id}; -->
+	<update id="makeRecommendationUserInfo">
+		 update member_for_recommend set tier = #{tier}, 
+		 user_level = #{user_level},
+		 win_rate = #{win_rate},
+		 wins = #{wins},
+		 losses = #{losses},
+		 liked_position = #{liked_position} 
+		 where nickname = #{nickName};
+	</update>
+	
+</mapper>

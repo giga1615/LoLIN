@@ -1,0 +1,1 @@
+{"schema": {"fields":[{"name":"index","type":"integer"},{"name":"\uc18c\ud658\uc0ac \uc774\ub984","type":"string"},{"name":"\uc120\ud638\ud558\ub294 \ud3ec\uc9c0\uc158","type":"string"}],"primaryKey":["index"],"pandas_version":"0.20.0"}, "data": [{"index":0,"\uc18c\ud658\uc0ac \uc774\ub984":"Hide on bush","\uc120\ud638\ud558\ub294 \ud3ec\uc9c0\uc158":"\ubbf8\ub4dc"}]}

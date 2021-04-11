@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lolin.dao.MultiChatDao">
+
+
+	<select id="getRoomNumberByRoomName" resultType="String">
+		 select room_no from bangjanglist where room_name like #{roomName}
+	</select>
+	
+	
+	<select id="getRoomNameByRoomNumber" resultType="String">
+		 select room_name from bangjanglist where room_no like #{roomNumber}
+	</select>
+	
+	
+	<select id="getMyRoomList" resultType="com.lolin.model.MyRoomListDto">
+	select room_no roomNumber, room_name roomName from bangjanglist where nick_name like #{nickName}
+	UNION
+	select room_no roomNumber, room_name roomName from memberchatroomlist where nick_name like #{nickName}
+	</select>
+	
+	<select id="getRoomMemberList" resultType="String">
+		 select nick_name nickName from memberchatroomlist where room_no=#{roomNumber};
+	</select>
+	
+	
+	<select id="getRoomsAllMessageByRoomNumber" resultType="com.lolin.model.MultiChatRoomMessageDto">
+		 select room_no roomNo, room_name roomName, id, create_time createTime, nick_name nickName, message_data messageData from chatroom where room_no = #{roomNo}
+	</select>
+	
+	<select id="getCountRoomMember" resultType="Integer">
+		select count(distinct nick_name) from memberchatroomlist where room_no=#{roomNumber}
+	</select>
+	
+	
+	
+	<!-- 여기는 중복되는거 있는지 select로 직접확인해줘야함 -->
+	<insert id="makeChatRoom">
+		 insert into bangjanglist (id, nick_name, room_name) values (#{id},#{nickName},#{roomName} ) 
+	</insert>
+	
+	
+	<!-- 중복체크해주고 방에 입장시키기 -->
+	<insert id="enterToChatRoom">
+		 insert ignore into memberchatroomlist (room_no, id, nick_name, room_name ) values ( #{roomNumber} , #{id},#{nickName},#{roomName}) 
+	</insert>
+	
+	
+	<insert id="sendMessageToChatRoom" >
+		insert into chatroom (room_no, room_name, id, nick_name, message_data) values (#{roomNo},#{roomName},#{id}, #{nickName}, #{messageData} )  
+	</insert>
+	
+	
+	<!-- select check connected, disConnected -->
+	<select id="connectionCheck" resultType="com.lolin.model.ConnectionDto">
+		 select id, connection_check connectionCheck from connection where id like #{id}
+	</select>
+	
+	
+	
+	<!-- insert connected, disConnected -->
+	<insert id="connected">
+	 	insert into connection (id, my_nickname, connection_check) VALUES (#{id}, #{nickName},1) ON DUPLICATE KEY UPDATE connection_check=1 
+	</insert>
+	
+	<update id="disConnected">
+	 	update connection set connection_check = 0 where id=#{id} ;
+	</update>
+	
+	
+	<select id="getBangJang" resultType="String">
+        select nick_name from bangjanglist where room_no=#{roomNumber};
+    </select>
+    
+	
+	
+</mapper>

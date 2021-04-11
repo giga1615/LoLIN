@@ -1,0 +1,304 @@
+/* body {
+  margin-top: 20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;
+} */
+.main-body {
+  padding: 15px;
+}
+.card {
+  /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); */
+  box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%) !important;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  /* background-clip: border-box; */
+  /* border: 0 solid rgba(0, 0, 0, 0.125); */
+  /* border-radius: 0.25rem; */
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.gutters-sm > .col,
+.gutters-sm > [class*='col-'] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+.h-100 {
+  height: 100% !important;
+}
+.shadow-none {
+  box-shadow: none !important;
+}
+.recommend-wrap {
+  background-color: #f7f7f7;
+}
+.sub_title_chat {
+  height: 45px !important;
+}
+.profile_icon {
+  float: left;
+  width: 60px;
+}
+.main_profile_text {
+  float: left;
+  margin-left: 5px;
+  margin-right: 2px;
+}
+.main_profile_id {
+  text-align: left;
+  margin-left: 60px;
+  padding-left: 15px;
+}
+.recommend_profile_id {
+  text-align: left;
+  margin-left: 10px;
+  /* padding-left: 6px; */
+  float: left;
+}
+.text-purple {
+  color: #555df2;
+}
+.nextLine {
+  display: block;
+}
+.sameLine {
+  display: inline-block;
+}
+.widthFull {
+  width: 100%;
+  margin-top: 12px;
+  color: #eee !important;
+}
+.align-right {
+  float: right;
+  margin-right: 10px;
+}
+.toggle {
+  float: right;
+}
+.v-switch-core {
+  height: 20px !important;
+}
+.v-switch-button {
+  width: 14px !important;
+  height: 14px !important;
+}
+.vue-js-switch {
+  font-weight: 800 !important;
+  font-size: 11px !important;
+}
+.main_game_info {
+  height: 108px;
+  /* display: flex; */
+}
+.gray-block {
+  background-color: #f7f7f7;
+}
+.block3 {
+  display: flex;
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+  position: relative;
+  width: 100%;
+  float: left;
+  justify-content: center;
+}
+.gray-block2 {
+  /* border: #444 !important; */
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  /* border-color: ; */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.col-md-4 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.main_profile_picture {
+  margin-top: 5px;
+  height: 60px !important;
+  width: 60px !important;
+}
+.recommend_profile_picture {
+  margin-top: 3px;
+  height: 40px !important;
+  width: 40px !important;
+}
+.text13 {
+  font-size: 13px !important;
+  padding-bottom: 5px !important;
+}
+.like_icon {
+  font-size: 22px !important;
+  color: #d37a90 !important;
+}
+.people_like_icon {
+  font-size: 22px !important;
+  color: #b3b3b3;
+  margin-bottom: 0px !important;
+}
+.dislike_icon {
+  font-size: 22px !important;
+  color: #688ec9 !important;
+}
+.profile_b_block {
+  height: 30px !important;
+}
+.clear {
+  clear: both;
+}
+.mb3rem {
+  margin-bottom: 3rem;
+}
+.f-left {
+  float: left;
+}
+.main-select {
+  /* background-color: #b3b3b315 !important; */
+  background-color: #ffffff88 !important;
+}
+.select-text {
+  margin-top: 0.475rem;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.vue-slider {
+  width: 800px !important;
+  height: 6px !important;
+}
+.vue-slider-process {
+  background-color: #6472f2 !important;
+}
+.main_tier_text {
+  text-align: left;
+  margin-top: 0.475rem;
+  color: #495057;
+}
+.recommend_box {
+  padding: 30px;
+  padding-bottom: 10px;
+}
+.member-block {
+  height: 340px;
+}
+.pagination {
+  margin: 0 auto;
+}
+.pagination_height {
+  height: 35px;
+}
+.page-item.active .page-link {
+  background-color: #f7f7f7 !important;
+  border-color: #cccccc99 !important;
+  color: #6472f2 !important;
+  font-weight: 800 !important;
+}
+.page-link {
+  color: #777 !important;
+}
+.people-body {
+  padding: 14px 10px;
+}
+.recommend-title {
+  height: 50px;
+  justify-content: center;
+  display: flex;
+}
+.user_game_info {
+  height: 80px;
+}
+.main_rec_btn {
+  background-color: #ffffff88 !important;
+  border: 1px solid #b3b3b3aa !important;
+}
+.btn-outline-secondary {
+  color: #adadad !important;
+  font-weight: 700 !important;
+}
+.main_rec_btn:hover {
+  background-color: #6372ff44 !important;
+  font-weight: 600 !important;
+  color: #555df2 !important;
+}
+.isOnline {
+  text-align: right;
+}
+.online_icon {
+  color: rgb(117, 199, 145) !important;
+  font-size: 10px !important;
+  margin-bottom: 5px !important;
+}
+.offline_icon {
+  color: rgb(199, 199, 199) !important;
+  font-size: 10px !important;
+  margin-bottom: 5px !important;
+}
+.win-padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.padding0 {
+  padding-top: 0px !important;
+}
+.marginMember {
+  font-size: 18px;
+  margin-bottom: 2px !important;
+  margin-top: 2px !important;
+  /* padding-left: 5px; */
+}
+.isOnlineMember {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.search_btn {
+  border-radius: 10px !important;
+  padding: 4px 15px !important;
+  background-color: #77777735 !important;
+  border: 0 !important;
+  color: #777 !important;
+}
+.search_btn:hover {
+  background-color: #6372ff44 !important;
+  /* color: white !important; */
+  font-weight: 600 !important;
+}
+.not_login {
+  margin-top: 100px;
+  height: 500px;
+}
+.body-rule {
+  width: 120px;
+  /* padding: 0 5px; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.heartBtn {
+  color: #6472f2 !important;
+}

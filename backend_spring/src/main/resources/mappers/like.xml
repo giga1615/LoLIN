@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lolin.dao.LikeDao">
+
+	
+	
+
+	<insert id="likeInsert">
+	insert into like_list (my_id, my_nickname, your_nickname) values (#{my_id},#{my_nickname},#{your_nickname});
+	</insert>
+	
+	<delete id="likeDelete">
+	delete from like_list where my_nickname=#{my_nickname} and your_nickname=#{your_nickname};	
+	</delete>
+	
+<!-- s닉네임으로 찾아서 넣어줘도 상관없음 -->
+	<update id="likePlus">
+		update member_for_recommend set liked = liked+1 where nickname=#{your_nickname}
+	</update>
+
+	<update id="likeMinus">
+		update member_for_recommend set liked = liked-1 where nickname=#{your_nickname}
+	</update>
+	
+	<select id="likeRead" resultType="com.lolin.model.LikeDto">
+		select distinct my_nickname as your_nickname, connection_check from connection where my_nickname in (select distinct your_nickname from like_list where my_id=#{my_id}); 
+	</select>
+	
+	
+	
+	
+</mapper>

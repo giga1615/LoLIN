@@ -4,7 +4,7 @@
 
 <img src="https://user-images.githubusercontent.com/45623764/114303663-43899380-9b0a-11eb-9d05-f4bdffb27b9c.png" width="40%"><br/>
 
-> <br/><br/>
+<br/><br/>
 
 ## 🔎 [롤린(LoLIN)](http://j4a104.p.ssafy.io:8080/)  보러가기<br/>
 

@@ -17,9 +17,9 @@
 | 역할 | 이름     | 포지션             | Github                                                    |
 | ---- | -------- | ------------------ | --------------------------------------------------------- |
 | 팀장 | 🍫 황윤호 | Data Analysis      |                                                           |
-| 팀원 | 🍜 박다윤 | Frontend & Backend |                                                           |
-|      | 🍎 신충현 | Backend            |                                                           |
-|      | 🍣 윤지선 | Frontend           | [@giga1615](https://github.com/giga1615?tab=repositories) |
+| 팀원 | 🍜 박다윤 | Frontend & Backend |  [@nuyadkrap](https://github.com/nuyadkrap)  |
+|      | 🍎 신충현 | Backend            |  [@ybj0749](https://lab.ssafy.com/ybj0749)  |
+|      | 🍣 윤지선 | Frontend           | [@giga1615](https://github.com/giga1615) |
 |      | 🍗 이도건 | Data Analysis      |                                                           |
 
 <br/><br/>

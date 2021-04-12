@@ -16,7 +16,7 @@
 
 | 역할 | 이름     | 포지션             | Github                                                    |
 | ---- | -------- | ------------------ | --------------------------------------------------------- |
-| 팀장 | 🍫 황윤호 | Data Analysis      |                                                           |
+| 팀장 | 🍫 황윤호 | Data Analysis      |  [@hossi-py](https://github.com/hossi-py)   |
 | 팀원 | 🍜 박다윤 | Frontend & Backend |  [@nuyadkrap](https://github.com/nuyadkrap)  |
 |      | 🍎 신충현 | Backend            |  [@chyn00](https://github.com/chyn00)  |
 |      | 🍣 윤지선 | Frontend           | [@giga1615](https://github.com/giga1615) |
